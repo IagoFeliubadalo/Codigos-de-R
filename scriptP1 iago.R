@@ -36,17 +36,6 @@ with(datostrain,lines(lowess(count~hour),col=2))
 dim(datostrain$hour)
 boxplot(datostrain$count~datostrain$hour)
  
-
-
-
-
-
-
-
-
-
-
-
 intervalos <- c(0,7,9,17,20,24)
 
 datostrain$hour_interval <- cut(datostrain$hour,breaks = intervalos,right = FALSE)
@@ -182,7 +171,6 @@ col.points <- rep(rgb(0,0,0,0.1),nrow(datostrain4))        # Vector de colores
 col.points[obs.rm] <- 2:4                            # Colores distintos para las observaciones influyentes
 pairs(datostrain4[,-10],col=col.points,pch=19,cex=0.8)     # Dibujo por pares de las observaciones influyentes
 datos.rm <- datostrain4[-obs.rm ,]                         # Nos creamos un nuevo data.frame sin estas observaciones
-
 
 #21
 
